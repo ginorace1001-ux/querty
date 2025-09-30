@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="querky.ico">   
+  <title>Querky — 3D Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src ="logo.png" alt="Querky logo" class="logo">  
+    </div>
+    <nav class="nav">
+      <button  id="open-products">Shop</button>
+      <button  id="open-account">Account</button>
+      <button  id="open-cart">Carrello (<span id="cart-count">0</span>)</button>
+    </nav>
+  </header>
+<app class="js"></app>
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Oggetti 3D unici. Stampali. Collezionali.</h2>
+        <p>Scopri design curati e pronti per la stampa 3D. Crea un account, acquista e scarica i file STL.</p>
+        <div class="hero-cta">
+          <button id="shop-now">Acquista ora</button>
+          <button id="learn-more">Come funziona</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="cube-preview" aria-hidden="true">
+          <div class="cube">
+            <div class="face f1"></div>
+            <div class="face f2"></div>
+            <div class="face f3"></div>
+            <div class="face f4"></div>
+            <div class="face f5"></div>
+            <div class="face f6"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section" id="products-section" aria-labelledby="prod-title">
+      <h2 id="prod-title">Prodotti</h2>
+      <div id="products" class="product-grid"></div>
+    </section>
+  </main>
+
+
+  <aside class="drawer" id="cart-drawer" aria-hidden="true">
+    <header class="fit">
+      <h3 class= scritta-carello>Carrello</h3>
+      <button class="close" data-close="cart-drawer">✕</button>
+    </header>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total">Totale: €<span id="cart-total">0.00</span></div>
+      <button id="checkout-btn">Vai al pagamento</button>
+    </div>
+  </aside>
+
+
+  <aside class="drawer" id="account-drawer" aria-hidden="true">
+    <header class="fit">
+      <h3 class= scritta-carello >Account</h3>
+      <button class="close" data-close="account-drawer">✕</button>
+    </header>
+    <div class="account-forms">
+      <form id="signup-form" class="form">
+        <h4>Registrati</h4>
+        <input type="text" id="su-name" placeholder="Nome" required>
+        <input type="email" id="su-email" placeholder="Email" required>
+        <input type="password" id="su-pass" placeholder="Password" required>
+        <button type="submit">Crea account</button>
+      </form>
+
+      <form id="login-form" class="form">
+        <h4>Accedi</h4>
+        <input type="email" id="li-email" placeholder="Email" required>
+        <input type="password" id="li-pass" placeholder="Password" required>
+        <button type="submit">Accedi</button>
+      </form>
+
+      <div id="account-info" class="account-info" hidden>
+        <p>Benvenuto, <span id="account-name"></span>!</p>
+        <button id="logout-btn">Disconnetti</button>
+      </div>
+    </div>
+  </aside>
+
+  <div id="product-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="modal-close">✕</button>
+      <div class="modal-body">
+        <div class="modal-preview">
+          <div class="cube-large" id="cube-large">
+            <div class="face f1"></div>
+            <div class="face f2"></div>
+            <div class="face f3"></div>
+            <div class="face f4"></div>
+            <div class="face f5"></div>
+            <div class="face f6"></div>
+          </div>
+        </div>
+        <div class="modal-info">
+          <h3 id="modal-title"></h3>
+          <p id="modal-desc"></p>
+          <div class="price">€<span id="modal-price"></span></div>
+          <div class="modal-actions">
+            <button id="add-to-cart">Aggiungi al carrello</button>
+            <button id="buy-now">Compra subito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© Querky — Oggetti 3D made with </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
